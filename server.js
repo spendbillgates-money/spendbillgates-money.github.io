@@ -4,13 +4,18 @@ const path = require('path');
 
 const port = 3000;
 http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url);
-  if (req.url === '/' || req.url === '') {
+  let requestUrl = req.url.split('?')[0].split('#')[0];
+  
+  let filePath = path.join(__dirname, requestUrl);
+  if (requestUrl === '/' || requestUrl === '') {
     filePath = path.join(__dirname, 'index.html');
+  } else {
+    // If the path does not have an extension, append .html for clean URL routing
+    const ext = path.extname(filePath);
+    if (!ext) {
+      filePath += '.html';
+    }
   }
-
-  // strip query parameters/hash
-  filePath = filePath.split('?')[0].split('#')[0];
 
   const extname = String(path.extname(filePath)).toLowerCase();
   const mimeTypes = {

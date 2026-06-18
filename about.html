@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>About Us - Spend billgates money Simulator</title>
+  <meta name="description" content="Learn more about the Spend billgates money simulator. Read our detailed explanation of wealth representation, financial parity, and developer stories.">
+  <link rel="canonical" href="https://spendbillgates-money.github.io/about.html">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="container">
+    <nav class="header-nav" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 20px 0;">
+      <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+        <span class="logo-icon">💰</span> Spend billgates money
+      </a>
+      
+      <div class="nav-links-capsule">
+        <a href="index.html" class="nav-link-item" id="nav-bill-gates">Bill Gates</a>
+        <a href="spend-elon-musk-money.html" class="nav-link-item" id="nav-elon-musk">Elon Musk</a>
+        <a href="spend-jeff-bezos-money.html" class="nav-link-item" id="nav-jeff-bezos">Jeff Bezos</a>
+        <a href="spend-mark-zuckerberg-money.html" class="nav-link-item" id="nav-mark-zuckerberg">Mark Zuckerberg</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content Section -->
+  <main class="container" style="margin-top: 40px; margin-bottom: 60px; text-align: left;">
+    <section class="hero-card" style="text-align: left; padding: 40px; margin-bottom: 45px; line-height: 1.8;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">About Our Simulator: Spend billgates money</h1>
+      
+      <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+        The concept of <strong>Spend billgates money</strong> was born from a simple yet profound realization: the human mind is fundamentally unequipped to grasp the scale of modern billionaires' wealth. When we read that an individual is worth $100 Billion, $200 Billion, or more, the figure registers merely as a large string of digits. We lack the direct sensory references needed to contextualize these vast magnitudes.
+      </p>
+
+      <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+        This simulator was built as an interactive, educational tool designed to bridge that cognitive gap. By translating abstract billions into concrete, selectable assets—ranging from simple consumables like a Big Mac to global infrastructure investments like a cargo ship or sports franchise—players can directly experience the limits of luxury spending.
+      </p>
+
+      <h2 style="font-size: 1.6rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">Our Core Mission: Financial Parity Visualization</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">
+        Every design decision in our simulator is guided by educational intent. We don't just want to let you click buttons; we want you to see the real-world equivalents of that wealth:
+      </p>
+      <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px;">
+        <li>⌛ <strong>Time Parity</strong>: Helping players visualize wealth through seconds, minutes, and days of passive earning.</li>
+        <li>💼 <strong>Labor Parity</strong>: Directly contrasting simulated shopping bills with the lifetime earnings of average working-class citizens.</li>
+        <li>🏡 <strong>Material Parity</strong>: Displaying a broad catalog of assets to show how billionaire fortunes could theoretically acquire whole sports leagues, cities, or art collections.</li>
+      </ul>
+
+      <h2 style="font-size: 1.6rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">Gamified Parody and Interaction</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">
+        To make this educational experiment engaging, we've structured it like a game. You can type your name directly onto the receipt, watch simulated news headlines update dynamically based on your shopping choices, and earn parodic achievements. The Web Audio synthesizer adds a touch of retro arcade fun to every click.
+      </p>
+      
+      <p style="color: var(--text-secondary); margin-bottom: 16px;">
+        We hope this tool provides you with a fun, eye-opening, and educational perspective on the scale of modern billionaire resources!
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; font-size: 0.85rem; flex-wrap: wrap;">
+      <a href="about.html" style="font-weight: 600;">About Us</a>
+      <a href="contact.html" style="font-weight: 600;">Contact Us</a>
+      <a href="disclaimer.html" style="font-weight: 600;">Disclaimer</a>
+      <a href="privacy-policy.html" style="font-weight: 600;">Privacy Policy</a>
+      <a href="terms-of-service.html" style="font-weight: 600;">Terms of Service</a>
+    </div>
+    <p>&copy; 2026 Spend billgates money. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeBtn.innerHTML = newTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+      });
+    }
+    initTheme();
+  </script>
+</body>
+</html>
