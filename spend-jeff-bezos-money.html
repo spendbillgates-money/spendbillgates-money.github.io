@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Spend Jeff Bezos Money Simulator - Virtual Game ($200 Billion)</title>
+  <meta name="description" content="Play the Spend Jeff Bezos Money Simulator! Virtually spend Jeff Bezos' massive net worth of $200 Billion on 45 crazy items like jets, mega-yachts, and spaceships. Get instant receipts.">
+  <meta name="keywords" content="spend jeff bezos money, jeff bezos simulator, jeff bezos money game, billionaire spending game, virtual jeff bezos fortune">
+  <link rel="canonical" href="https://spendbillionairemoney.com/spend-jeff-bezos-money.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spend Jeff Bezos Money Simulator - Virtual Game ($200 Billion)">
+  <meta property="og:description" content="Spend Jeff Bezos' fortune of $200 Billion on luxury mansions, yachts, private islands, and more. Generate and share your spending receipt!">
+  <meta property="og:url" content="https://spendbillionairemoney.com/spend-jeff-bezos-money.html">
+  <meta property="og:image" content="images/avatar-jeff-bezos.jpg">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Spend Jeff Bezos Money Simulator",
+    "description": "Spend Jeff Bezos' net worth of $200 Billion on various items in this free web simulator.",
+    "genre": "Simulation",
+    "playMode": "SinglePlayer",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web Browser"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="container">
+    <nav class="header-nav" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 20px 0;">
+      <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+        <span class="logo-icon">💰</span> Spend Billionaire Money
+      </a>
+      
+      <div class="nav-links-capsule">
+        <a href="index.html" class="nav-link-item" id="nav-bill-gates">Bill Gates</a>
+        <a href="spend-elon-musk-money.html" class="nav-link-item" id="nav-elon-musk">Elon Musk</a>
+        <a href="spend-jeff-bezos-money.html" class="nav-link-item active-billionaire" id="nav-jeff-bezos">Jeff Bezos</a>
+        <a href="spend-mark-zuckerberg-money.html" class="nav-link-item" id="nav-mark-zuckerberg">Mark Zuckerberg</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Profile Banner -->
+  <div class="container">
+    <section class="hero-card">
+      <div class="hero-content">
+        <div class="profile-section">
+          <div class="profile-avatar-container">
+            <img class="profile-avatar" src="images/avatar-jeff-bezos.jpg" alt="Jeff Bezos Portrait">
+          </div>
+          <div>
+            <h1 class="profile-title">Spend Jeff Bezos' Money</h1>
+            <p class="profile-desc">
+              Virtually spend Jeff Bezos' estimated fortune of <strong>$200,000,000,000</strong> ($200 Billion USD). Buy mega super yachts, mansions, private space trips, art collections, or sports franchises!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sticky Balance Bar -->
+  <div class="sticky-balance-bar">
+    <div class="container balance-container">
+      <div class="balance-title">Remaining Balance</div>
+      <div id="balance-number" class="balance-number">$200,000,000,000</div>
+      <div class="spending-progress-wrapper">
+        <div id="spending-progress-bar" class="spending-progress-bar"></div>
+      </div>
+      <div class="spending-stats">
+        <span id="stat-spent">Spent: $0</span>
+        <span id="stat-percent">0.0000% Spent</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Bar & Grid -->
+  <main class="container">
+    <div id="filter-bar" class="filter-bar"></div>
+    <div id="items-grid" class="items-grid"></div>
+
+    <!-- Receipt -->
+    <section id="receipt-section" class="receipt-section">
+      <div class="receipt-header">
+        <h2 class="receipt-title">Your Receipt</h2>
+        <p class="receipt-subtitle">Spend Jeff Bezos Money Simulator</p>
+      </div>
+      <div class="receipt-body">
+        <div id="receipt-items" class="receipt-items"></div>
+        <div class="receipt-total-row">
+          <span>TOTAL SPENT</span>
+          <span id="receipt-total-val">$0</span>
+        </div>
+        <div class="receipt-actions">
+          <button id="copy-receipt-btn" class="receipt-btn">📋 Copy Text Receipt</button>
+          <button id="share-receipt-btn" class="receipt-btn primary">📤 Share Receipt</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Screenshot Share Modal -->
+  <div id="screenshot-modal" class="screenshot-modal">
+    <div class="screenshot-card">
+      <button id="screenshot-close" class="screenshot-close">&times;</button>
+      <div class="screenshot-inner">
+        <div class="screenshot-header">
+          <span class="screenshot-badge">Receipt Card</span>
+          <h3 style="font-size: 1.4rem;">I Spent <span id="screenshot-name">Jeff Bezos</span>' Money!</h3>
+        </div>
+        <div class="screenshot-stats">
+          <div>
+            <div class="screenshot-stat-label">Total Spent</div>
+            <div id="screenshot-spent" class="screenshot-stat-val">$0</div>
+          </div>
+          <div>
+            <div class="screenshot-stat-label">Spent %</div>
+            <div id="screenshot-percent" class="screenshot-stat-val">0.00%</div>
+          </div>
+        </div>
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 16px; border-radius: var(--radius-md); text-align: center; margin-bottom: 20px;">
+          <div class="screenshot-stat-label">Remaining Balance</div>
+          <div id="screenshot-remaining" style="font-size: 1.6rem; font-weight: 800; color: var(--buy-btn);"> $200,000,000,000</div>
+        </div>
+        <div class="screenshot-footer-tip">
+          📸 Take a screenshot of this card to share with friends!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Content & FAQ Section (SEO Optimized) -->
+  <section class="container" style="margin-top: 60px; margin-bottom: 40px; text-align: left;">
+    <hr style="border: 0; border-top: 1px solid var(--panel-border); margin-bottom: 40px;">
+    
+    <!-- Long Form Article Card -->
+    <div class="hero-card" style="text-align: left; padding: 45px; margin-bottom: 40px; line-height: 1.8;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">The Ultimate Guide to Spending Jeff Bezos' Fortune: Visualizing Fictional Billions</h2>
+      
+      <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.08rem;">
+        Welcome to the ultimate web simulator, <strong>Spend billgates money</strong>. Have you ever closed your eyes and tried to imagine what it feels like to possess a fortune so vast that purchasing a custom fleet of SpaceX rockets or an entire NFL sports franchise doesn't even registers as a 5% drop in your bank balance? This game is built to solve that exact cognitive bottleneck. It allows you to virtually hold the reins of Jeff Bezos' estimated fortune of <strong>$200,000,000,000</strong> ($200 Billion USD) and try your best to spend every single dollar on 45 meticulously categorized luxury and normal items.
+      </p>
+
+      <h3 style="font-size: 1.5rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">1. The Mind-Boggling Reality of $200,000,000,000</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        Human brains are fundamentally bad at processing large numbers. While we intuitively understand the difference between $10 and $100, our cognitive mapping breaks down when we transition from millions to billions. Let's look at a classic visualization method: <strong>time</strong>.
+      </p>
+      <div style="background: var(--bg-color); border-left: 4px solid var(--accent-color); padding: 20px; margin: 24px 0; border-radius: var(--radius-sm);">
+        <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 12px; color: var(--text-primary); font-weight: 500;">
+          <li>⏰ If you spent <strong>$1 every single second</strong>, you would spend $1 Million in about <strong>11.5 days</strong>.</li>
+          <li>⏳ To spend $1 Billion at the same rate of $1/second, it would take you <strong>31.7 years</strong>.</li>
+          <li>🌌 To spend Jeff Bezos' entire fortune of $200 Billion, you would have to spend $1/second continuously for <strong>6,340 years</strong>!</li>
+        </ul>
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        If you stacked one-dollar bills, a single million would reach about 360 feet high. A stack of $200 Billion in one-dollar bills would rise over <strong>13,600 miles</strong> into space—far past the orbit of low-earth satellites and international space stations!
+      </p>
+
+      <h3 style="font-size: 1.5rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">2. The Philosophy of the Simulator: Education Meets Parody</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        The <strong>Spend billgates money</strong> simulator is more than a simple clicker game. It serves as an educational parody of modern capital concentration. Every time you fill your shopping cart with mega yachts, mansions, and private jets, the simulator dynamically calculates and displays a thermal receipt detailing your purchases. 
+      </p>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        To highlight the scale of middle-class earnings, the printed receipt calculates the exact years of labor an average worker earning $50,000/year would need to complete to buy the same shopping cart. Additionally, it highlights the <strong>Billionaire Recovery Time</strong>—illustrating that the money you spent on mega items is earned back by Jeff Bezos in a matter of minutes or hours through passive interest and corporate stock dividends.
+      </p>
+
+      <h3 style="font-size: 1.5rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">3. Gamified Mechanics: Sound Effects, Tickers, and Achievements</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        To create an immersive and highly addictive simulation, we have built-in several engaging desktop-quality features:
+      </p>
+      <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px;">
+        <li>🔊 <strong>Web Audio Synthesizer</strong>: Programmatic sound effects synthesize double coin chimes (cha-ching) when buying and mechanical clicks when selling, loading instantly with zero external network downloads.</li>
+        <li>📰 <strong>Parodic News Marquee</strong>: A scrolling headline ticker shifts text depending on your shopping cart (e.g., buying 50+ fast food items warns of a local diet emergency).</li>
+        <li>🏆 <strong>Achievements Tracker</strong>: Eight different milestone achievements challenge you to spend the fortune in specific parodic ways (like buying the Mona Lisa or hoarding gold toilets).</li>
+      </ul>
+
+      <h3 style="font-size: 1.5rem; margin-top: 35px; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">4. Can You Actually Spend It All?</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem;">
+        Many players start the game believing they can empty the balance in seconds. However, purchasing a single Ferrari ($250,000) or Rolex watch ($15,000) is like taking a single drop of water out of an ocean. Even buying luxury assets like Super Yachts ($150 Million) requires you to buy dozens of them to make any meaningful dent. This creates a fascinating realization about the upper limits of luxury consumption: there are simply not enough high-priced assets in the world to easily consume $200 Billion in cash without acquiring mega enterprises, skyscrapers, and sports networks.
+      </p>
+    </div>
+
+    <!-- Expanded FAQ Accordion Grid -->
+    <div style="margin-bottom: 40px;">
+      <h2 style="text-align: center; margin-bottom: 30px; font-size: 2rem; font-family: 'Outfit', sans-serif;">Frequently Asked Questions (FAQ)</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        
+        <!-- FAQ 1 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ What is the main goal of the Spend billgates money game?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            The main goal is to virtually spend the massive fortunes of billionaires like Bill Gates ($110 Billion), Elon Musk ($250 Billion), and others to visually and interactively comprehend the enormous scale of billionaire fortunes.
+          </p>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ Are the item prices in the simulator accurate?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Yes, the item prices reflect real-world estimates, ranging from standard everyday goods (such as a book or cup of coffee) to high-end assets (like luxury private yachts, fighter jets, skyscrapers, and sports franchises).
+          </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ How does the digital signature on the receipt work?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            You can type your name directly inside the "Customer Signature" line at the bottom of the printed thermal receipt slip. It automatically synchronizes with the customer profile card at the top, and prints your custom name inside copied text receipts.
+          </p>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ Why is there a worker salary comparison on the slip?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            This comparison details how many years a standard middle-class worker earning $50,000/year would need to work to afford your shopping cart, and highlights how quickly the billionaire recovers that spent sum.
+          </p>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ Can I switch to other billionaires and keep playing?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Absolutely! The capsule pill selector in the header navigation menu lets you seamlessly switch between Bill Gates, Elon Musk, Jeff Bezos, and Mark Zuckerberg, resetting the simulated balance to their respective net worth.
+          </p>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div style="background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: flex-start;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif;">❓ Is this game associated with Jeff Bezos or Amazon?</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            No. This web simulator is a purely fictional parodic game created for entertainment and educational value. It is not affiliated with, authorized, or endorsed by Jeff Bezos, Amazon, or any associated companies.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container">
+    <p>&copy; 2026 Spend Billionaire Money Simulator. All rights reserved.</p>
+    <p style="font-size: 0.75rem; margin-top: 8px; color: var(--text-muted);">This simulator is a parodic web application and holds no relation with Jeff Bezos or Amazon.</p>
+  </footer>
+
+  <!-- Setup Global Variables for Page & Load Controller Scripts -->
+  <script>
+    window.billionaireName = "Jeff Bezos";
+    window.billionaireFortune = 200000000000;
+  </script>
+  <script src="js/items.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
