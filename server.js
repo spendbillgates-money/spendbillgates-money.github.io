@@ -6,6 +6,17 @@ const port = 3000;
 http.createServer((req, res) => {
   let requestUrl = req.url.split('?')[0].split('#')[0];
   
+  // Clean URL redirects
+  if (requestUrl === '/index.html' || requestUrl === '/index') {
+    res.writeHead(301, { 'Location': '/' });
+    return res.end();
+  }
+  if (requestUrl.endsWith('.html')) {
+    const cleanUrl = requestUrl.substring(0, requestUrl.length - 5);
+    res.writeHead(301, { 'Location': cleanUrl });
+    return res.end();
+  }
+
   let filePath = path.join(__dirname, requestUrl);
   if (requestUrl === '/' || requestUrl === '') {
     filePath = path.join(__dirname, 'index.html');
